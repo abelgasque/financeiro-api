@@ -1,0 +1,51 @@
+.body{
+    background-image:  url(../../../assets/img/fundo-home.jpg);
+    background-repeat: no-repeat;
+}
+
+.header{
+    margin-top: 50px;
+}
+
+.mat-card{
+    min-height: 300px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+}
+
+.title-home{
+    font-size: 40px;
+    color: #fff;
+    padding: 10px;
+}
+.title{
+    text-align: center;
+    background:rgba(0,0,0,0.8);
+    color: #fff;
+    padding: 10px;
+}
+
+img{
+    height: 300px;
+    width: 300px;
+}
+
+.ui-g{
+    padding-top: 30px;
+    text-align: center;
+    background-color: none;
+}
+ul li{
+    list-style-type: none;
+}
+
+.example-card {
+    max-width: 400px;
+    padding: 10px;
+}
+
+.example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+}

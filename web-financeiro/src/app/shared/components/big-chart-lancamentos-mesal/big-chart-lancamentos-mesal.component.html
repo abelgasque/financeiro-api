@@ -1,0 +1,11 @@
+<div class="ui-g-12">
+  <h1>{{title}}</h1>
+</div>
+<div class="ui-g-12" style="display: block;">
+  <canvas baseChart class="baseChart" [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions"
+    [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType" #chart>
+  </canvas>
+</div>
+<div class="ui-g-12">
+  <button mat-button (click)="randomize()">Gráfico de {{barChartType === 'bar'? 'linha':'barra'}}</button>
+</div>

@@ -1,0 +1,127 @@
+.userBtn{
+    background-color: transparent;
+    color: #fff;  
+}
+
+.userBtn img{
+    padding: 2px auto 2px;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+}
+
+a img {
+    margin: -15px;
+    padding: 0;
+    width: 100%;
+    height: 55px;
+    border-radius: 50%;
+    border: 1px #fff solid;
+    background-color: #fff;
+}
+
+.img{
+    margin: 5px auto 0;
+    padding: 0;
+    align-items: center;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;    
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.people {
+    margin: 0 auto 0;
+    text-align: center;
+    color: #000;
+    width: 100%;
+    padding: 0;
+}
+
+.mat-menu-item {
+    width: 100%;
+    color: #000;
+}
+
+.mat-toolbar {
+    background-color: #1c1c1c;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+p-sidebar .mat-subheader {
+    color: white;
+}
+
+p-sidebar a,
+p-sidebar .mat-icon {
+    color: white;
+}
+
+p-sidebar p-sidebar.mat-list-option a {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+p-sidebar .mat-list-option:hover {
+    background-color: white;
+    border-left: 5px solid #3161dd !important;
+    color: black;
+}
+
+p-sidebar .mat-list-option:hover .mat-icon {
+    color: black;
+}
+
+p-sidebar .mat-list-option:hover a {
+    color: black;
+}
+
+p-sidebar ul li {
+    list-style: none;
+}
+
+p-sidebar img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+p-sidebar a {
+    color: #fff;
+    text-decoration: none;
+}
+
+p-sidebar a:hover,
+.mat-toolbar a:hover {
+    color: #fff;
+}
+
+p-sidebar .mat-divider {
+    background-color: #fff;
+}
+
+p-sidebar p {
+    text-align: center;
+}
+
+p-sidebar .imgUser {
+    margin-top: -50px !important;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+
+}

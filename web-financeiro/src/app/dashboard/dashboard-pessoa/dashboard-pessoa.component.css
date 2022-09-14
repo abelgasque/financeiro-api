@@ -1,0 +1,19 @@
+.bigChart{
+    max-height: 450px !important;
+}
+
+.cardSaldo{
+    background-color: rgb(199, 245, 199);
+}
+
+.cardReceita{
+    background-color: rgb(163, 201, 245);
+}
+
+.cardDespesa{
+    background-color: rgb(238, 160, 160);
+}
+
+.cards-big-charts{
+    height: 100%;
+}
