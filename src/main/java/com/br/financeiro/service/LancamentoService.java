@@ -34,7 +34,7 @@ import com.br.financeiro.repository.LancamentoRepository;
 import com.br.financeiro.repository.PessoaRepository;
 import com.br.financeiro.repository.UsuarioRepository;
 import com.br.financeiro.service.exception.PessoaInexistenteOuInativaException;
-import com.br.financeiro.storage.S3;
+// import com.br.financeiro.storage.S3;
 
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperExportManager;
@@ -61,8 +61,8 @@ public class LancamentoService {
 	@Autowired
 	private Mailer mailer;
 	
-	@Autowired
-	private S3 s3;
+	// @Autowired
+	// private S3 s3;
 	
 	@Scheduled(cron = "0 0 6 * * *")
 	public void avisarSobreLancamentosVencidos() {
@@ -146,9 +146,9 @@ public class LancamentoService {
 	public Lancamento salvar(Lancamento entidade) {
 	    validarPessoa(entidade);
 		
-	    if (StringUtils.hasText(entidade.getAnexo())) {
-			s3.salvar(entidade.getAnexo());
-		}
+	    // if (StringUtils.hasText(entidade.getAnexo())) {
+		// 	s3.salvar(entidade.getAnexo());
+		// }
 	    
 	    return lancamentoRepository.save(entidade);
 	}
@@ -159,11 +159,11 @@ public class LancamentoService {
 			validarPessoa(entidade);
 		}
 		
-		if (StringUtils.isEmpty(entidade.getAnexo()) && StringUtils.hasText(entidadeSalva.get().getAnexo())) {
-			s3.remover(entidadeSalva.get().getAnexo());
-		} else if (StringUtils.hasText(entidade.getAnexo()) && !entidade.getAnexo().equals(entidadeSalva.get().getAnexo())) {
-			s3.substituir(entidadeSalva.get().getAnexo(), entidade.getAnexo());
-		}
+		// if (StringUtils.isEmpty(entidade.getAnexo()) && StringUtils.hasText(entidadeSalva.get().getAnexo())) {
+		// 	// s3.remover(entidadeSalva.get().getAnexo());
+		// } else if (StringUtils.hasText(entidade.getAnexo()) && !entidade.getAnexo().equals(entidadeSalva.get().getAnexo())) {
+		// 	s3.substituir(entidadeSalva.get().getAnexo(), entidade.getAnexo());
+		// }
 		
 		BeanUtils.copyProperties(entidade, entidadeSalva, "id");
 		return lancamentoRepository.save(entidade);
