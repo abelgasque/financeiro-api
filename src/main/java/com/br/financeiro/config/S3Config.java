@@ -19,13 +19,14 @@ import com.amazonaws.services.s3.model.lifecycle.LifecycleTagPredicate;
 
 import com.br.financeiro.config.property.FinanceiroApiProperty;
 
+
+@Profile("production")
 @Configuration
 public class S3Config {
 	
 	@Autowired
 	private FinanceiroApiProperty property;
-	
-	@Profile("!production")
+
 	@Bean
 	public AmazonS3 amazonS3() {
 		AWSCredentials credenciais = new BasicAWSCredentials(
