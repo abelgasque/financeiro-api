@@ -2,4 +2,14 @@
 docker build -t financeiro-api .
 
 # rodar o container
-docker run -d --name container-financeiro-api -p 8080:8080 financeiro-api
+docker run -d --name container-financeiro-api --env-file .env -p 8080:8080 financeiro-api
+
+# Imagem postgres
+docker pull postgres:16
+
+docker run --name container-postgres \
+  -e POSTGRES_DB=financeiro_db \
+  -e POSTGRES_USER=admin \
+  -e POSTGRES_PASSWORD=Application@2025 \
+  -p 5432:5432 \
+  -d postgres:16
