@@ -25,6 +25,7 @@ import com.amazonaws.services.s3.model.Tag;
 import com.br.financeiro.config.property.FinanceiroApiProperty;
 
 @Component
+@ConditionalOnProperty(name = "storage.enabled", havingValue = "true")
 public class S3 {
 	
 	private static final Logger logger = LoggerFactory.getLogger(S3.class);
