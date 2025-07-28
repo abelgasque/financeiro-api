@@ -3,7 +3,7 @@ package com.br.financeiro.config;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Profile;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSStaticCredentialsProvider;
@@ -20,8 +20,8 @@ import com.amazonaws.services.s3.model.lifecycle.LifecycleTagPredicate;
 import com.br.financeiro.config.property.FinanceiroApiProperty;
 
 
-@Profile("production")
 @Configuration
+@ConditionalOnProperty(name = "storage.enabled", havingValue = "true")
 public class S3Config {
 	
 	@Autowired
