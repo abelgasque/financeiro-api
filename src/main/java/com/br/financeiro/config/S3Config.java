@@ -24,6 +24,7 @@ public class S3Config {
 	@Autowired
 	private FinanceiroApiProperty property;
 	
+	@Profile("!production")
 	@Bean
 	public AmazonS3 amazonS3() {
 		AWSCredentials credenciais = new BasicAWSCredentials(
