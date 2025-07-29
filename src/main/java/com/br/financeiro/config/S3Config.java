@@ -29,16 +29,16 @@ public class S3Config {
 	public AmazonS3 amazonS3() {
 		AWSCredentials credenciais = new BasicAWSCredentials(
 				property.getS3().getAccessKeyId(), property.getS3().getSecretAccessKey());
-		
+
 		AmazonS3 amazonS3 = AmazonS3ClientBuilder.standard()
 				.withCredentials(new AWSStaticCredentialsProvider(credenciais))
 				.withRegion(Regions.US_EAST_1)
 				.build();
-		
-		// if (!amazonS3.doesBucketExistV2(property.getS3().getBucket())) {
-		// 	amazonS3.createBucket(
-		// 			new CreateBucketRequest(property.getS3().getBucket()));
-			
+
+		if (!amazonS3.doesBucketExistV2(property.getS3().getBucket())) {
+			amazonS3.createBucket(
+					new CreateBucketRequest(property.getS3().getBucket()));
+
 			BucketLifecycleConfiguration.Rule regraExpiracao = 
 					new BucketLifecycleConfiguration.Rule()
 					.withId("Regra de expiração de arquivos temporários")
