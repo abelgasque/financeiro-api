@@ -1,8 +1,12 @@
 # construir a imagem
 docker build -t financeiro-api .
 
+Ou
+
+docker pull abelgasque/financeiro-api
+
 # rodar o container
-docker run -d --name container-financeiro-api --env-file .env -p 8080:8080 financeiro-api
+docker run -d --name container-financeiro-api --env-file .env -p 8080:8080 abelgasque/financeiro-api
 
 # Imagem postgres
 docker pull postgres:16
