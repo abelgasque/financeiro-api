@@ -8,4 +8,4 @@ RUN mvn clean package -DskipTests
 FROM openjdk:8-jdk-alpine
 VOLUME /tmp
 COPY --from=build /app/target/Financeiro-api-1.0.0-SNAPSHOT.jar app.jar
-ENTRYPOINT ["java","-jar","/app.jar"]
+ENTRYPOINT ["java", "-Xmx350m", "-Xms256m", "-XX:+UseContainerSupport", "-jar", "/app.jar"]
