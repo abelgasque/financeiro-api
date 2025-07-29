@@ -3,7 +3,6 @@ package com.br.financeiro.config;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSStaticCredentialsProvider;
@@ -21,7 +20,6 @@ import com.br.financeiro.config.property.FinanceiroApiProperty;
 
 
 @Configuration
-@ConditionalOnProperty(name = "storage.enabled", havingValue = "true")
 public class S3Config {
 	
 	@Autowired
@@ -37,9 +35,9 @@ public class S3Config {
 				.withRegion(Regions.US_EAST_1)
 				.build();
 		
-		if (!amazonS3.doesBucketExistV2(property.getS3().getBucket())) {
-			amazonS3.createBucket(
-					new CreateBucketRequest(property.getS3().getBucket()));
+		// if (!amazonS3.doesBucketExistV2(property.getS3().getBucket())) {
+		// 	amazonS3.createBucket(
+		// 			new CreateBucketRequest(property.getS3().getBucket()));
 			
 			BucketLifecycleConfiguration.Rule regraExpiracao = 
 					new BucketLifecycleConfiguration.Rule()

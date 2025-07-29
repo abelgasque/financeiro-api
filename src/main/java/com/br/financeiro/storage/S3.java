@@ -11,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.model.AccessControlList;
@@ -26,7 +25,6 @@ import com.amazonaws.services.s3.model.Tag;
 import com.br.financeiro.config.property.FinanceiroApiProperty;
 
 @Component
-@ConditionalOnProperty(name = "storage.enabled", havingValue = "true")
 public class S3 {
 	
 	private static final Logger logger = LoggerFactory.getLogger(S3.class);
